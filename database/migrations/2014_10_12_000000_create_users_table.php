@@ -12,11 +12,16 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('merlin_users', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
+            $table->string('nombre')->default('');
+            $table->string('apellido')->default('');
             $table->string('email')->unique();
             $table->string('password');
+            $table->string('cc')->default('');
+            $table->date('fecha_nacimiento');
+            $table->tinyInteger('sexo');
+            $table->tinyInteger('estado')->default(1);
             $table->rememberToken();
             $table->timestamps();
         });
@@ -29,6 +34,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::drop('users');
+        Schema::drop('merlin_users');
     }
 }
