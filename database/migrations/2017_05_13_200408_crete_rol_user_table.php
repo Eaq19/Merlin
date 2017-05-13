@@ -12,12 +12,12 @@ class CreteRolUserTable extends Migration
      */
     public function up()
     {
-        Schema::create('merlin_rol_user', function (Blueprint $table) {
+        Schema::create('merlin_rols_users', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_rol')->unsigned();
             $table->integer('id_user')->unsigned();
             $table->foreign('id_user')->references('id')->on('merlin_users');
-            $table->foreign('id_rol')->references('id')->on('merlin_rol');
+            $table->foreign('id_rol')->references('id')->on('merlin_rols');
             $table->rememberToken();
             $table->timestamps();
             
@@ -31,6 +31,6 @@ class CreteRolUserTable extends Migration
      */
     public function down()
     {
-        Schema::drop('merlin_rol_user');
+        Schema::drop('merlin_rols_users');
     }
 }

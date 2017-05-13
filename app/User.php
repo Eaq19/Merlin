@@ -12,9 +12,9 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'nombre', 'email', 'password','apellido','cc','fecha_nacimiento','sexo','estado',
     ];
-
+    
     /**
      * The attributes that should be hidden for arrays.
      *
@@ -23,4 +23,6 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+    
+    protected $table = 'merlin_users';
 }

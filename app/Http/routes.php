@@ -1,5 +1,7 @@
 <?php
-
+use App\User;
+use App\Rol;
+use App\RolUser;
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -10,7 +12,14 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+Route::resource('user', 'UserController');
+Route::resource('rol_user', 'RolUserController');
+Route::resource('rol', 'RolController');
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::auth();
+
+Route::get('/home', 'HomeController@index');

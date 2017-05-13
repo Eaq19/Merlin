@@ -12,7 +12,7 @@ class CreateRolTable extends Migration
      */
     public function up()
     {
-        Schema::create('merlin_rol', function (Blueprint $table) {
+        Schema::create('merlin_rols', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre');
             $table->rememberToken();
@@ -28,6 +28,6 @@ class CreateRolTable extends Migration
      */
     public function down()
     {
-        Schema::drop('merlin_rol');
+        Schema::drop('merlin_rols');
     }
 }
