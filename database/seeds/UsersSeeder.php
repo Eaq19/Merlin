@@ -13,8 +13,8 @@ class UsersSeeder extends Seeder
     public function run()
     {
         $faker = Faker::create();
-        for ($i=0; $i < 50; $i++) {
-            \DB::table('merlin_users')->insert(array(
+        for ($i=0; $i < 10; $i++) {
+            \DB::table('users')->insert(array(
                    'nombre' => $faker->firstNameFemale . ' ' . $faker->lastName,
                    'email'  => $faker->email,
                    'password'  => $faker->password,

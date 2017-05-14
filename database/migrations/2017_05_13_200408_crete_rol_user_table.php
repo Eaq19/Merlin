@@ -16,7 +16,7 @@ class CreteRolUserTable extends Migration
             $table->increments('id');
             $table->integer('id_rol')->unsigned();
             $table->integer('id_user')->unsigned();
-            $table->foreign('id_user')->references('id')->on('merlin_users');
+            $table->foreign('id_user')->references('id')->on('users');
             $table->foreign('id_rol')->references('id')->on('merlin_rols');
             $table->rememberToken();
             $table->timestamps();
