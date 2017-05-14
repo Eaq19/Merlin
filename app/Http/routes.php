@@ -16,9 +16,9 @@ Route::resource('user', 'UserController');
 Route::resource('rol_user', 'RolUserController');
 Route::resource('rol', 'RolController');
 
-Route::get('/', function () {
+Route::get('/', ['middleware' => ['auth', 'rolVerificate:editor'], function () {
     return view('welcome');
-});
+}]);
 
 Route::auth();
 

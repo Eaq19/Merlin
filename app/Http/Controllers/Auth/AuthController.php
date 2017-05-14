@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use App\RolUser;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
@@ -65,8 +66,8 @@ class AuthController extends Controller
      * @return User
      */
     protected function create(array $data)
-    {
-        return User::create([
+    {   
+        $aUser = User::create([
             'nombre' => $data['name'],
             'email' => $data['email'],
             'apellido' => $data['apellido'],
@@ -75,5 +76,10 @@ class AuthController extends Controller
             'sexo' => $data['sexo'],
             'password' => bcrypt($data['password']),
         ]);
+        RolUser::create([
+            'id_user' => $aUser->id,
+            'id_rol' => '1',
+        ]);
+        return $aUser;
     }
 }

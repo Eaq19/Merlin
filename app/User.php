@@ -25,4 +25,8 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
     
+    public function hasPermit($role){
+        dd($role);
+    }
+    
 }

@@ -15,7 +15,6 @@ class CreateRolTable extends Migration
         Schema::create('merlin_rols', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre');
-            $table->rememberToken();
             $table->timestamps();
             
         });

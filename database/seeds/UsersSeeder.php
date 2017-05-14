@@ -26,6 +26,10 @@ class UsersSeeder extends Seeder
                    'created_at' => date('Y-m-d H:m:s'),
                    'updated_at' => date('Y-m-d H:m:s')
             ));
+            \DB::table('merlin_rols_users')->insert(array(
+                'id_user' => \DB::getPdo()->lastInsertId(),
+                'id_rol' => '1',
+            ));
         }
     }
 }
